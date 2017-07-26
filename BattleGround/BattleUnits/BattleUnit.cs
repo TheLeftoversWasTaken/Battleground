@@ -2,7 +2,7 @@
 
 namespace ProjectBattleGround
 {
-    public abstract class BattleUnit:ITakeDamage,IMove, IHeal
+    public abstract class BattleUnit:IBattleUnit
     {
         //fields
         private int health;
@@ -57,11 +57,11 @@ namespace ProjectBattleGround
         {
 
         }
-        public virtual void TakeDamage(BattleUnit damageDealer)
+        public virtual void TakeDamage(IBattleUnit damageDealer)
         {
             this.Health = this.Health - damageDealer.Damage;
         }
-        public virtual void Heal(Healer healerUnit)
+        public virtual void Heal(IHealer healerUnit)
         {
             this.health = this.health + healerUnit.HealingPower;
         }

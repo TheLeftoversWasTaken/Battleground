@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectBattleGround
 {
-    public class Healer : BattleUnit, ITakeDamage, IMove
+    public class Healer : BattleUnit, IHealer
     {
         //fields
         private int healingPower = 15;

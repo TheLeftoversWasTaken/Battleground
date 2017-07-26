@@ -47,11 +47,13 @@
     <Compile Include="BattleUnits\BattleUnit.cs" />
     <Compile Include="BattleUnits\CurrentUnitPossition.cs" />
     <Compile Include="BattleUnits\Healer.cs" />
-    <Compile Include="BattleUnits\IHeal.cs" />
-    <Compile Include="BattleUnits\ITakeDamage.cs" />
-    <Compile Include="BattleUnits\IMove.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IHeal.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IHealer.cs" />
+    <Compile Include="BattleUnits\UnitContracts\ITakeDamage.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IMove.cs" />
     <Compile Include="BattleUnits\Knight.cs" />
     <Compile Include="BattleUnits\Magician.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IBattleUnit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
