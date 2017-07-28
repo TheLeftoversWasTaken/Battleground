@@ -16,7 +16,6 @@ namespace ProjectBattleGround
         //method
         public override void TakeDamage(IBattleUnit damageDealer)
         {
-            Console.WriteLine('g');
             base.TakeDamage(damageDealer);
         }
     }

@@ -29,6 +29,7 @@ namespace ProjectBattleGround
                 this.health = value;
             }
         }
+
         public int Damage
         {
             get
@@ -40,6 +41,7 @@ namespace ProjectBattleGround
                 this.damage = value;
             }
         }
+
         public CurrentUnitPossition Possition
         {
             get
@@ -57,10 +59,12 @@ namespace ProjectBattleGround
         {
 
         }
+
         public virtual void TakeDamage(IBattleUnit damageDealer)
         {
             this.Health = this.Health - damageDealer.Damage;
         }
+
         public virtual void Heal(IHealer healerUnit)
         {
             this.health = this.health + healerUnit.HealingPower;

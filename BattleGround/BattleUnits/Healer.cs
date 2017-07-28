@@ -9,11 +9,12 @@ namespace ProjectBattleGround
     public class Healer : BattleUnit, IHealer
     {
         //fields
-        private int healingPower = 15;
+        private int healingPower;
 
         //constructor
-        public Healer(int health, int damage, CurrentUnitPossition possition) : base(health, damage, possition)
+        public Healer(int health, int damage, CurrentUnitPossition possition,int healingPower) : base(health, damage, possition)
         {
+            this.HealingPower = healingPower;
         }
 
         //properties

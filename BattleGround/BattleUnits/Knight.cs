@@ -8,6 +8,7 @@ namespace ProjectBattleGround
 {
     class Knight : BattleUnit, IMove, ITakeDamage
     {
+        //constructor from base
         public Knight(int health, int damage, CurrentUnitPossition possition) : base(health, damage, possition)
         {
         }
