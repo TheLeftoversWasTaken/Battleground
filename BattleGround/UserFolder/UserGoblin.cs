@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectBattleGround.UserFolder
 {
-    public enum UserType
+    class UserGoblin
     {
-        Alien,
-        Cat,
-        Doge,
-        Goblin
     }
 }

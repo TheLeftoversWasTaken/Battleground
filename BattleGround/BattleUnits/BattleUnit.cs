@@ -2,7 +2,7 @@
 
 namespace ProjectBattleGround
 {
-    public abstract class BattleUnit:IBattleUnit
+    public abstract class BattleUnit: IBattleUnit
     {
         //fields
         private int health;

@@ -7,24 +7,18 @@ using ProjectBattleGround.UserFolder.UserContracts;
 
 namespace ProjectBattleGround.UserFolder
 {
-    public class User : IUser
+    public abstract class User : IUser
     {
         //fields
         private IList<IBattleUnit> userArmy;
-        private UserType userType=UserType.Alien;
+        private UserRace userRace;
 
         //constructors
-        public User(UserType userType)
+        public User(UserRace userRace)
         {
-            this.UserType = UserType;
+            this.UserRace = UserRace;
             this.userArmy = new List<IBattleUnit>();
         }
-
-        public User(UserType userType,IList<IBattleUnit> userArmy) 
-            : this(userType)
-        {
-            this.UserArmy = userArmy;
-        }  //am not sure how it will be implemented so i made 2 constructors
 
         //properties
         public IList<IBattleUnit> UserArmy
@@ -39,29 +33,46 @@ namespace ProjectBattleGround.UserFolder
             }
         }
 
-        public UserType UserType
+        public UserRace UserRace
         {
             get
             {
-                return this.userType;
+                return this.userRace;
             }
             set
             {
-                this.userType = value;
+                this.userRace = value;
             }
-        }
-
-        public void AddToUserArmy(IBattleUnit battleUnit)
-        {
-            userArmy.Add(battleUnit);
-        }
-
-        public void RemoveUnitFromUserArmy(IBattleUnit battleUnit)
-        {
-            throw new NotImplementedException();
         }
 
         //methods
 
+        public virtual void BuildUserArmy()
+        {
+            string race = UserArmyRace();
+
+            switch (race)
+            {
+                case "Doge":
+                    return new Knigt()
+                    break;
+
+                case "Cat":
+                    // implement specific attributes for class units
+                    break;
+
+                case "Alien":
+                    // implement specific attributes for class units
+                    break;
+
+                case "Goblin":
+                    // implement specific attributes for class units
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public abstract string UserArmyRace();
     }
 }
