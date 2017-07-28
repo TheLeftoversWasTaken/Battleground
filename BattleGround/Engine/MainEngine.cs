@@ -13,43 +13,23 @@ namespace ProjectBattleGround.Engine
     {
         public static void StartGame()
         {
-            CurrentInterface.GameStartScreen();
-
-           /* CurrentInterface.BuildStartScreen();
+            CurrentInterface.BuildStartScreen();
             Console.ReadLine();
             Console.Clear();
             CurrentInterface.ChooseARace("RED PLAYER ");
-            User redUser= CreatePlayer("RED PLAYER");
-            Console.WriteLine(redUser.UserType);
+            IUser redUser= CreatePlayer("RED PLAYER");
+            Console.WriteLine(redUser.UserRace);
         }
-        public static User CreatePlayer(string playerName)
+        public static IUser CreatePlayer(string playerName)
         {
-            char userInput = char.Parse(Console.ReadLine());
-            while(userInput!='1' && userInput != '2' && userInput != '3' && userInput != '4')
+            string userInput = Console.ReadLine();
+            while(userInput!="1" && userInput != "2" && userInput != "3" && userInput != "4")
             {
                 Console.Clear();
                 CurrentInterface.ChooseARace(playerName, true);
-                userInput=char.Parse(Console.ReadLine());
+                userInput=Console.ReadLine();
             }
-            UserType userType;
-            Console.WriteLine(userInput);
-            switch (userInput)
-            {
-                case '1':
-                    userType = UserType.Alien;
-                    break;
-                case '2':
-                    userType = UserType.Cat;
-                    break;
-                case '3':
-                    userType = UserType.Doge;
-                    break;
-                default:
-                    userType = UserType.Goblin;
-                    break;
-            }
-            User user = new User(userType);
-            return user;*/
+            return null;
         }
     }
 }

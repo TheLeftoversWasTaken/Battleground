@@ -54,7 +54,6 @@ namespace ProjectBattleGround.UserFolder
             switch (race)
             {
                 case "Doge":
-                    return new Knigt()
                     break;
 
                 case "Cat":

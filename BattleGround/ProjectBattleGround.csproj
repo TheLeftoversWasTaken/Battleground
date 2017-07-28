@@ -58,8 +58,12 @@
     <Compile Include="Engine\MainEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserFolder\UserAlien.cs" />
+    <Compile Include="UserFolder\UserCat.cs" />
+    <Compile Include="UserFolder\UserDoge.cs" />
+    <Compile Include="UserFolder\UserGoblin.cs" />
+    <Compile Include="UserFolder\UserRace.cs" />
     <Compile Include="UserInterfaceBuilder\CurrentInterface.cs" />
-    <Compile Include="UserFolder\UserType.cs" />
     <Compile Include="UserFolder\User.cs" />
     <Compile Include="UserFolder\UserContracts\IUser.cs" />
   </ItemGroup>
