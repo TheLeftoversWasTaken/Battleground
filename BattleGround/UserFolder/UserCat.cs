@@ -16,7 +16,7 @@ namespace ProjectBattleGround.UserFolder
 
         public override string UserArmyRace()
         {
-            throw new NotImplementedException();
+            return "Cat";
         }
     }
 }

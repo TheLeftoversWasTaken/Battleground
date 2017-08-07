@@ -4,3 +4,9 @@ C:\Users\pavel\Desktop\New folder\Battleground\BattleGround\bin\Debug\ProjectBat
 C:\Users\pavel\Desktop\New folder\Battleground\BattleGround\obj\Debug\ProjectBattleGround.csprojResolveAssemblyReference.cache
 C:\Users\pavel\Desktop\New folder\Battleground\BattleGround\obj\Debug\ProjectBattleGround.exe
 C:\Users\pavel\Desktop\New folder\Battleground\BattleGround\obj\Debug\ProjectBattleGround.pdb
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\obj\Debug\ProjectBattleGround.csprojResolveAssemblyReference.cache
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\obj\Debug\ProjectBattleGround.exe
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\obj\Debug\ProjectBattleGround.pdb
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\bin\Debug\ProjectBattleGround.exe.config
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\bin\Debug\ProjectBattleGround.exe
+D:\_SOFT_DEV\TELERIK_ALPHA\TeamProjectBattleGround\BattleGround\bin\Debug\ProjectBattleGround.pdb

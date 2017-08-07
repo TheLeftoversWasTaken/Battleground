@@ -10,10 +10,8 @@ namespace ProjectBattleGround
     {
 
         //constructor from base
-        public Archer(int health, int damage,CurrentUnitPossition possition) : base(health, damage, possition)
-        {
-            
-        }
+        public Archer(int health = 100, int damage = 20) : base(health, damage)
+        { }
 
         //method
         public override void TakeDamage(IBattleUnit damageDealer)
@@ -21,6 +19,7 @@ namespace ProjectBattleGround
             base.TakeDamage(damageDealer);
         }
 
-        public int MyProperty { get; set; }
+        
+
     }
 }

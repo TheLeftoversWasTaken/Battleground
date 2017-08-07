@@ -2,19 +2,17 @@
 
 namespace ProjectBattleGround
 {
-    public abstract class BattleUnit: IBattleUnit
+    public abstract class BattleUnit : IBattleUnit
     {
         //fields
         private int health;
         private int damage;
-        private CurrentUnitPossition possition;
 
         //constructor
-        public BattleUnit(int health,int damage, CurrentUnitPossition possition)
+        public BattleUnit(int health, int damage)
         {
             this.Health = health;
             this.Damage = damage;
-            this.Possition = possition;
         }
 
         //properties
@@ -42,18 +40,6 @@ namespace ProjectBattleGround
             }
         }
 
-        public CurrentUnitPossition Possition
-        {
-            get
-            {
-                return this.possition;
-            }
-            set
-            {
-                this.possition = value;
-            }
-        }
-
         //methods
         public virtual void Move()
         {
@@ -69,5 +55,6 @@ namespace ProjectBattleGround
         {
             this.health = this.health + healerUnit.HealingPower;
         }
+
     }
 }

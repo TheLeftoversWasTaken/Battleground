@@ -17,7 +17,7 @@ namespace ProjectBattleGround.UserFolder
         public User(UserRace userRace)
         {
             this.UserRace = UserRace;
-            this.userArmy = new List<IBattleUnit>();
+            this.UserArmy = new List<IBattleUnit>();
         }
 
         //properties
@@ -54,18 +54,39 @@ namespace ProjectBattleGround.UserFolder
             switch (race)
             {
                 case "Doge":
+
+                    this.UserArmy.Add(new Knight(health: 225));
+                    this.UserArmy.Add(new Archer());
+                    this.UserArmy.Add(new Magician());
+                    this.UserArmy.Add(new Healer());
+
                     break;
 
                 case "Cat":
-                    // implement specific attributes for class units
+
+                    this.UserArmy.Add(new Archer(damage: 30));
+                    this.UserArmy.Add(new Knight());
+                    this.UserArmy.Add(new Magician());
+                    this.UserArmy.Add(new Healer());
+
                     break;
 
                 case "Alien":
-                    // implement specific attributes for class units
+
+                    this.UserArmy.Add(new Healer(healingPower: 40));
+                    this.UserArmy.Add(new Archer());
+                    this.UserArmy.Add(new Knight());
+                    this.UserArmy.Add(new Magician());
+
                     break;
 
                 case "Goblin":
-                    // implement specific attributes for class units
+
+                    this.UserArmy.Add(new Magician(health: 100));
+                    this.UserArmy.Add(new Healer());
+                    this.UserArmy.Add(new Archer());
+                    this.UserArmy.Add(new Knight());
+
                     break;
                 default:
                     break;

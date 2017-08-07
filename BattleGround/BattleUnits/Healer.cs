@@ -12,7 +12,7 @@ namespace ProjectBattleGround
         private int healingPower;
 
         //constructor
-        public Healer(int health, int damage, CurrentUnitPossition possition,int healingPower) : base(health, damage, possition)
+        public Healer(int health = 50, int damage = 5, int healingPower = 25) : base(health, damage)
         {
             this.HealingPower = healingPower;
         }
@@ -29,5 +29,7 @@ namespace ProjectBattleGround
                 this.healingPower = value;
             }
         }
+
+        
     }
 }

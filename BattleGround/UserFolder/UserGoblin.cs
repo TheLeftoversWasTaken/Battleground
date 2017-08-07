@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectBattleGround.UserFolder.UserContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,15 @@ using System.Threading.Tasks;
 
 namespace ProjectBattleGround.UserFolder
 {
-    class UserGoblin
+    public class UserGoblin : User, IUser
     {
+        public UserGoblin(UserRace userRace) : base(userRace)
+        {
+        }
+
+        public override string UserArmyRace()
+        {
+            return "Goblin";
+        }
     }
 }
