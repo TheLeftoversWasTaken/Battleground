@@ -16,10 +16,10 @@ namespace ProjectBattleGround.UserFolder
 
         public override void BuildUserArmy()
         {
-            this.UserArmy.Add(new Knight(health: 225));
             this.UserArmy.Add(new Archer());
+            this.UserArmy.Add(new Healer());
+            this.UserArmy.Add(new Knight(health: 225));
             this.UserArmy.Add(new Magician());
-            this.UserArmy.Add(new Healer()); ;
         }
     }
 }

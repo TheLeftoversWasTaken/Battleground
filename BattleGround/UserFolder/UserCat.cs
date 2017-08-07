@@ -18,9 +18,10 @@ namespace ProjectBattleGround.UserFolder
         {
 
             this.UserArmy.Add(new Archer(damage: 30));
+            this.UserArmy.Add(new Healer());
             this.UserArmy.Add(new Knight());
             this.UserArmy.Add(new Magician());
-            this.UserArmy.Add(new Healer());
+
         }
     }
 }

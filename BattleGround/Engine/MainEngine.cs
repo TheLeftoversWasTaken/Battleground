@@ -22,7 +22,6 @@ namespace ProjectBattleGround.Engine
             Console.Clear();
             CurrentInterface.GameStartScreen();
             Console.ReadLine();
-
         }
         public static IUser CreatePlayer(string outputMessage)
         {

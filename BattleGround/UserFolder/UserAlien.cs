@@ -16,8 +16,8 @@ namespace ProjectBattleGround.UserFolder
 
         public override void BuildUserArmy()
         {
-            this.UserArmy.Add(new Healer(healingPower: 40));
             this.UserArmy.Add(new Archer());
+            this.UserArmy.Add(new Healer(healingPower: 40));
             this.UserArmy.Add(new Knight());
             this.UserArmy.Add(new Magician());
         }
