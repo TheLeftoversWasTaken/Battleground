@@ -66,7 +66,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
             Console.Write(chooseRace);
         }
 
-        // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done)
+        // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
         public static void GameStartScreen()
         {
             string startScreen = String.Format(@"  ___________________                        	    _______________________________________________________________
