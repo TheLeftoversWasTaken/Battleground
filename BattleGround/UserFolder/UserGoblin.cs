@@ -13,9 +13,12 @@ namespace ProjectBattleGround.UserFolder
         {
         }
 
-        public override string UserArmyRace()
+        public override void BuildUserArmy()
         {
-            return "Goblin";
+            this.UserArmy.Add(new Magician(health: 100));
+            this.UserArmy.Add(new Healer());
+            this.UserArmy.Add(new Archer());
+            this.UserArmy.Add(new Knight());
         }
     }
 }

@@ -10,7 +10,6 @@ namespace ProjectBattleGround.UserFolder.UserContracts
     {
         UserRace UserRace { get; }
         IList<IBattleUnit> UserArmy { get; }
-        string UserArmyRace();
         void BuildUserArmy();
         
     }
