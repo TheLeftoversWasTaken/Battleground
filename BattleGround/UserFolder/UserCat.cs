@@ -9,7 +9,7 @@ namespace ProjectBattleGround.UserFolder
 {
     class UserCat : User, IUser
     {
-        public UserCat(UserRace userRace) : base(userRace)
+        public UserCat() : base()
         {
 
         }

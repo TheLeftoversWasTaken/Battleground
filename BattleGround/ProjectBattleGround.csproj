@@ -63,7 +63,6 @@
     <Compile Include="UserFolder\UserDoge.cs" />
     <Compile Include="UserFolder\UserGoblin.cs" />
     <Compile Include="UserInterfaceBuilder\CurrentInterface.cs" />
-    <Compile Include="UserFolder\UserRace.cs" />
     <Compile Include="UserFolder\User.cs" />
     <Compile Include="UserFolder\UserContracts\IUser.cs" />
   </ItemGroup>

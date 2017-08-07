@@ -9,7 +9,7 @@ namespace ProjectBattleGround.UserFolder
 {
     class UserAlien : User, IUser
     {
-        public UserAlien(UserRace userType) : base(userType)
+        public UserAlien() : base()
         {
             
         }

@@ -8,9 +8,7 @@ namespace ProjectBattleGround.UserFolder.UserContracts
 {
     public interface IUser
     {
-        UserRace UserRace { get; }
         IList<IBattleUnit> UserArmy { get; }
-        void BuildUserArmy();
-        
+        void BuildUserArmy();    
     }
 }

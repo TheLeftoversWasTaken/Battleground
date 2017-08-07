@@ -11,12 +11,9 @@ namespace ProjectBattleGround.UserFolder
     {
         //fields
         private IList<IBattleUnit> userArmy;
-        private UserRace userRace;
-
         //constructors
-        public User(UserRace userRace)
+        public User()
         {
-            this.UserRace = UserRace;
             this.UserArmy = new List<IBattleUnit>();
         }
 
@@ -30,18 +27,6 @@ namespace ProjectBattleGround.UserFolder
             private set
             {
                 this.userArmy = value;
-            }
-        }
-
-        public UserRace UserRace
-        {
-            get
-            {
-                return this.userRace;
-            }
-            set
-            {
-                this.userRace = value;
             }
         }
 

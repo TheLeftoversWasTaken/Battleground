@@ -40,7 +40,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
         }
 
-        public static void ChooseARace(string player,bool wrongChoice=false)
+        public static void ChooseARace(string player,bool wrongChoice=false)// wrong choice indicates if there has been a wrong choice from the user
         {
             CurrentInterface.GameNameGraphics();
             string mistakeMesage;
@@ -62,7 +62,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
                                                        {0}
 
-                                                 {1}  SELECT RACE:",
+                                                 {1} SELECT RACE:",
                                                      mistakeMesage,
                                                      player);
             Console.Write(chooseRace);
