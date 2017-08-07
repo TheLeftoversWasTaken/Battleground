@@ -19,13 +19,17 @@ namespace ProjectBattleGround.Engine
             CurrentInterface.GameStartScreen();
             Console.ReadLine();
         }
+
+        //creates the user that is selected by the player and returns it
         public static IUser CreatePlayer(string outputMessage)
         {
             CurrentInterface.ChooseARace(outputMessage);
-            IUser createdUser = ChooseAType(outputMessage);
+            IUser createdUser = ChooseAPlayerType(outputMessage);
             return createdUser;
         }
-        public static IUser ChooseAType(string playerName)
+
+        //loops until the player chooses a correct type and returns a user form the selected class
+        public static IUser ChooseAPlayerType(string playerName)
         {
             string userInput = Console.ReadLine();
             IUser createdUser;

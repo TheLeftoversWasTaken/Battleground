@@ -5,7 +5,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 {
     public class CurrentInterface
     {
-
+        // writes a big a** game on the console.
         public static void GameNameGraphics()
         {
             string buildGameNameGraphic = String.Format(@"         GGGGGGGGGGGGG                    AAAAAAAAA              MMMMMMMM           MMMMMMMM          EEEEEEEEEEEEEE
@@ -19,6 +19,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
             Console.Write(buildGameNameGraphic);
         }
 
+        //creates the start screen using GameNameGraphics
         public static void BuildStartScreen()
         {
             CurrentInterface.GameNameGraphics();
@@ -36,7 +37,8 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
         }
 
-        public static void ChooseARace(string player,bool wrongChoice=false)// wrong choice indicates if there has been a wrong choice from the user
+        // wrongChoice indicates if there has been a wrong choice from the user if used with true will put a wrong choice indicator on the screen
+        public static void ChooseARace(string player,bool wrongChoice=false)
         {
             CurrentInterface.GameNameGraphics();
             string mistakeMesage;
@@ -64,7 +66,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
             Console.Write(chooseRace);
         }
 
-
+        // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done)
         public static void GameStartScreen()
         {
             string startScreen = String.Format(@"  ___________________                        	    _______________________________________________________________

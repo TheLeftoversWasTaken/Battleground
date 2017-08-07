@@ -6,7 +6,10 @@ namespace ProjectBattleGround.UserFolder
     public abstract class User : IUser
     {
         //fields
+
+        //contains the army of every user
         private IList<IBattleUnit> userArmy;
+
         //constructors
         public User()
         {
@@ -28,6 +31,7 @@ namespace ProjectBattleGround.UserFolder
 
         //methods
 
+        //builds the army and is implemented by every of the types differently with each having their own more powerful units
         public abstract void BuildUserArmy();
     }
 }
