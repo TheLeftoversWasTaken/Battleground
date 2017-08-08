@@ -55,6 +55,7 @@
     <Compile Include="BattleUnits\Knight.cs" />
     <Compile Include="BattleUnits\Magician.cs" />
     <Compile Include="BattleUnits\UnitContracts\IBattleUnit.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IReturnHealthInANumberOfSpaces.cs" />
     <Compile Include="Engine\MainEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

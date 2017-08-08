@@ -16,7 +16,7 @@ namespace ProjectBattleGround.Engine
             Console.Clear();
             IUser blueUser = CreatePlayer("BLUE PLAYER");
             Console.Clear();
-            CurrentInterface.GameStartScreen();
+            CurrentInterface.GameStartScreen(redUser,blueUser);
             Console.ReadLine();
         }
 

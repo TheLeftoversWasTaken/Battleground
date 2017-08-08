@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectBattleGround
 {
-    public interface IBattleUnit : IHeal, IMove, ITakeDamage
+    public interface IBattleUnit : IHeal, IMove, ITakeDamage, IReturnHealthInANumberOfSpaces
     {
         int Health { get; }
         int Damage { get; }

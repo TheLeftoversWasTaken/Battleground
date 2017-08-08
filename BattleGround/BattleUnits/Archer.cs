@@ -8,12 +8,5 @@
         { }
 
         //method
-        public override void TakeDamage(IBattleUnit damageDealer)
-        {
-            base.TakeDamage(damageDealer);
-        }
-
-        
-
     }
 }

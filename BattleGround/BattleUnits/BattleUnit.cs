@@ -41,20 +41,37 @@ namespace ProjectBattleGround
         }
 
         //methods
-        public virtual void Move()
+
+        //doesnt do anything yet
+        public void Move()
         {
 
         }
 
-        public virtual void TakeDamage(IBattleUnit damageDealer)
+        //this unit receives dmg
+        public void TakeDamage(IBattleUnit damageDealer)
         {
             this.Health = this.Health - damageDealer.Damage;
         }
 
-        public virtual void Heal(IHealer healerUnit)
+        //this unit takes dmg
+        public void Heal(IHealer healerUnit)
         {
             this.health = this.health + healerUnit.HealingPower;
         }
+
+        //returns the health of a unit within n size of spaces
+        public string ReturnHealthInANumberOfSpaces(int numberOfSpaces)
+        {
+            string thisUnitHealth = this.Health.ToString();
+            int lenght = thisUnitHealth.Length;
+            for (int i = lenght; i < numberOfSpaces; i++)
+            {
+                thisUnitHealth = " " + thisUnitHealth;
+            }
+            return thisUnitHealth;
+        }
+
 
     }
 }
