@@ -7,6 +7,7 @@ namespace ProjectBattleGround
         //fields
         private int health;
         private int damage;
+        private CurrentUnitPossition unitPossition;
 
         //constructor
         public BattleUnit(int health, int damage)
@@ -40,13 +41,19 @@ namespace ProjectBattleGround
             }
         }
 
-        //methods
-
-        //doesnt do anything yet
-        public void Move()
+        public CurrentUnitPossition UnitPossition
         {
-
+            get
+            {
+                return this.unitPossition;
+            }
+            set
+            {
+                this.unitPossition = value;
+            }
         }
+
+        //methods
 
         //this unit receives dmg
         public void TakeDamage(IBattleUnit damageDealer)
@@ -72,6 +79,11 @@ namespace ProjectBattleGround
             return thisUnitHealth;
         }
 
+        //gives this unit a current possition
+        public void CurrentPossition(int horizontalPossition, int verticalPossition)
+        {
+            this.UnitPossition = new CurrentUnitPossition(horizontalPossition, verticalPossition);
+        }
 
     }
 }

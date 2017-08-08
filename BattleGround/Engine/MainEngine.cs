@@ -7,6 +7,7 @@ namespace ProjectBattleGround.Engine
 {
     public static class MainEngine
     {
+        //starts the game
         public static void StartGame()
         {
             CurrentInterface.BuildStartScreen();
@@ -17,6 +18,10 @@ namespace ProjectBattleGround.Engine
             IUser blueUser = CreatePlayer("BLUE PLAYER");
             Console.Clear();
             CurrentInterface.GameStartScreen(redUser,blueUser);
+            Console.ReadLine();
+            redUser.UserArmy[2].TakeDamage(blueUser.UserArmy[2]);
+            Console.Clear();
+            CurrentInterface.GameStartScreen(redUser, blueUser);
             Console.ReadLine();
         }
 

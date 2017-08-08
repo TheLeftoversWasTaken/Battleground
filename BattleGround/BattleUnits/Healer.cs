@@ -22,8 +22,6 @@
             {
                 this.healingPower = value;
             }
-        }
-
-        
+        }   
     }
 }

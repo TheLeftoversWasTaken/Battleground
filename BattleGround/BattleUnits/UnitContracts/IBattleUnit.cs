@@ -10,5 +10,6 @@ namespace ProjectBattleGround
     {
         int Health { get; }
         int Damage { get; }
+        CurrentUnitPossition UnitPossition { get; set; }
     }
 }

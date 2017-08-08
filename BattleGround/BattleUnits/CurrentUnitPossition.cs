@@ -3,20 +3,24 @@
     public struct CurrentUnitPossition
     {
         //constructors
-        public CurrentUnitPossition(int horizontalPossition, int diagonalPossition)
+        public CurrentUnitPossition(int horizontalPossition, int verticalPossition)
         {
             this.HorizontalPossition = horizontalPossition;
-            this.DiagonalPossition = diagonalPossition;
+            this.VerticalPossition = verticalPossition;
         }
 
         //properties
         public int HorizontalPossition
         {
-            get;set;
+            get;
+            private set;
         }
-        public int DiagonalPossition
+
+        public int VerticalPossition
         {
-            get;set;
+            get;
+            private set;
         }
+
     }
 }
