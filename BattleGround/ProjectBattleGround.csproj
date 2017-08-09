@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="BattleUnits\Archer.cs" />
     <Compile Include="BattleUnits\BattleUnit.cs" />
-    <Compile Include="BattleUnits\CurrentUnitPossition.cs" />
+    <Compile Include="BattleUnits\Position\CurrentUnitPossition.cs" />
     <Compile Include="BattleUnits\Healer.cs" />
     <Compile Include="BattleUnits\UnitContracts\IHeal.cs" />
     <Compile Include="BattleUnits\UnitContracts\IHealer.cs" />
@@ -57,6 +57,10 @@
     <Compile Include="BattleUnits\UnitContracts\IBattleUnit.cs" />
     <Compile Include="BattleUnits\UnitContracts\IReturnHealthInANumberOfSpaces.cs" />
     <Compile Include="Engine\MainEngine.cs" />
+    <Compile Include="Players\BluePlayer.cs" />
+    <Compile Include="Players\Contracts\IPlayer.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\RedPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserFolder\UserAlien.cs" />

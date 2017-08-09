@@ -8,6 +8,6 @@ namespace ProjectBattleGround
 {
     public interface IMove
     {
-        void CurrentPossition(int horizontalPossition, int verticalPossition);
+        void CurrentPossition(int verticalPossition, int horizontalPossition);
     }
 }

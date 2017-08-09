@@ -4,6 +4,7 @@
     {
         //fields
         private int healingPower;
+        private const char healerChar = 'H';
 
         //constructor with default values.
         public Healer(int health = 50, int damage = 5, int healingPower = 25) : base(health, damage)

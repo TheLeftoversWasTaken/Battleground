@@ -8,6 +8,7 @@ namespace ProjectBattleGround
         private int health;
         private int damage;
         private CurrentUnitPossition unitPossition;
+        private char unitChar;
 
         //constructor
         public BattleUnit(int health, int damage)
@@ -80,9 +81,9 @@ namespace ProjectBattleGround
         }
 
         //gives this unit a current possition
-        public void CurrentPossition(int horizontalPossition, int verticalPossition)
+        public void CurrentPossition(int verticalPossition, int horizontalPossition)
         {
-            this.UnitPossition = new CurrentUnitPossition(horizontalPossition, verticalPossition);
+            this.UnitPossition = new CurrentUnitPossition(verticalPossition, horizontalPossition);
         }
 
     }
