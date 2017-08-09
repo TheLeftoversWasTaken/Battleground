@@ -83,13 +83,25 @@ namespace ProjectBattleGround
         //returns the health of a unit within n size of spaces
         public string ReturnHealthInANumberOfSpaces(int numberOfSpaces)
         {
-            string thisUnitHealth = this.Health.ToString();
-            int lenght = thisUnitHealth.Length;
+            string unitHealthInThreeSpaces = this.Health.ToString();
+            int lenght = unitHealthInThreeSpaces.Length;
             for (int i = lenght; i < numberOfSpaces; i++)
             {
-                thisUnitHealth = " " + thisUnitHealth;
+                unitHealthInThreeSpaces = " " + unitHealthInThreeSpaces;
             }
-            return thisUnitHealth;
+            return unitHealthInThreeSpaces;
+        }
+
+        //returns the dmg points of a unit within n size of spaces 
+        public string ReturnDamagePointsInANumberOfSpaces(int numberOfSpaces)
+        {
+            string unitDamageInThreeSpaces = this.Damage.ToString();
+            int lenght = unitDamageInThreeSpaces.Length;
+            for (int i = lenght; i < numberOfSpaces; i++)
+            {
+                unitDamageInThreeSpaces = " " + unitDamageInThreeSpaces;
+            }
+            return unitDamageInThreeSpaces;
         }
 
         //gives this unit a current possition

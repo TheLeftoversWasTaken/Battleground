@@ -51,6 +51,7 @@
     <Compile Include="BattleUnits\Healer.cs" />
     <Compile Include="BattleUnits\UnitContracts\IHeal.cs" />
     <Compile Include="BattleUnits\UnitContracts\IHealer.cs" />
+    <Compile Include="BattleUnits\UnitContracts\IReturnDamageInNumberOfSpaces.cs" />
     <Compile Include="BattleUnits\UnitContracts\ITakeDamage.cs" />
     <Compile Include="BattleUnits\UnitContracts\IMove.cs" />
     <Compile Include="BattleUnits\Knight.cs" />

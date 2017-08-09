@@ -72,16 +72,16 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         {
             string startScreen = String.Format(@"  ___________________                        	    ___1_______2_______3_______4_______5_______6_______7_______8___
  |    RED PLAYER     |                             |       |       |       |       |       |       |       |       |
- |    Knight- {0}    |                            A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
- |    Archer- {1}    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
- |    Healer- {2}    |                             |       |       |       |       |       |       |       |       |
- |    Mage-   {3}    |                            B|       |       |       |       |       |       |       |       |
+ |    Knight- {0}HP/{9}DMG   |                            A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
+ |    Archer- {1}HP/{10}DMG    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
+ |    Healer- {2}HP/{11}DMG    |                             |       |       |       |       |       |       |       |       |
+ |    Mage-   {3}HP/{12}DMG    |                            B|       |       |       |       |       |       |       |       |
  |-------------------|                             |_______|_______|_______|_______|_______|_______|_______|_______|
  |    BLUE PLAYER    |                             |       |       |       |       |       |       |       |       |
- |    Knight- {4}    |                            C|       |       |       |       |       |       |       |       |
- |    Archer- {5}    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
- |    Healer- {6}    |
- |    Mage-   {7}    |
+ |    Knight- {4}HP/{13}DMG    |                            C|       |       |       |       |       |       |       |       |
+ |    Archer- {5}HP/{14}DMG    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
+ |    Healer- {6}HP/{15}DMG    |
+ |    Mage-   {7}HP/{16}DMG    |
  |___________________|
 
 
@@ -95,7 +95,15 @@ namespace ProjectBattleGround.UserInterfaceBuilder
     bluePlayer.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
     bluePlayer.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
     bluePlayer.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
-    " "
+    " ",
+    redPlayer.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
 );
             Console.Write(startScreen);
         }
