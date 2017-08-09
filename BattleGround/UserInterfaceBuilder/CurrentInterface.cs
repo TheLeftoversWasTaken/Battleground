@@ -70,19 +70,19 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
         public static void GameStartScreen(IUser redPlayer,IUser bluePlayer)
         {
-            string startScreen = String.Format(@"  ___________________                        	    ___1_______2_______3_______4_______5_______6_______7_______8___
- |    RED PLAYER     |                             |       |       |       |       |       |       |       |       |
- |    Knight- {0}HP/{9}DMG   |                            A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
- |    Archer- {1}HP/{10}DMG    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
- |    Healer- {2}HP/{11}DMG    |                             |       |       |       |       |       |       |       |       |
- |    Mage-   {3}HP/{12}DMG    |                            B|       |       |       |       |       |       |       |       |
- |-------------------|                             |_______|_______|_______|_______|_______|_______|_______|_______|
- |    BLUE PLAYER    |                             |       |       |       |       |       |       |       |       |
- |    Knight- {4}HP/{13}DMG    |                            C|       |       |       |       |       |       |       |       |
- |    Archer- {5}HP/{14}DMG    |                             |_______|_______|_______|_______|_______|_______|_______|_______|
- |    Healer- {6}HP/{15}DMG    |
- |    Mage-   {7}HP/{16}DMG    |
- |___________________|
+            string startScreen = String.Format(@"  _____________________                        	  ___1_______2_______3_______4_______5_______6_______7_______8___
+ |     RED PLAYER     |                         |       |       |       |       |       |       |       |       |
+ | Knight-{0}HP/{9}DMG |                        A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
+ | Archer-{1}HP/{10}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
+ | Healer-{2}HP/{11}DMG |                         |       |       |       |       |       |       |       |       |
+ | Mage  -{3}HP/{12}DMG |                        B|       |       |       |       |       |       |       |       |
+ |--------------------|                         |_______|_______|_______|_______|_______|_______|_______|_______|
+ |     BLUE PLAYER    |                         |       |       |       |       |       |       |       |       |
+ | Knight-{4}HP/{13}DMG |                        C|       |       |       |       |       |       |       |       |
+ | Archer-{5}HP/{14}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
+ | Healer-{6}HP/{15}DMG |
+ | Mage  -{7}HP/{16}DMG |
+ |____________________|
 
 
 
@@ -108,5 +108,6 @@ namespace ProjectBattleGround.UserInterfaceBuilder
             Console.Write(startScreen);
         }
         
+
     }
 }

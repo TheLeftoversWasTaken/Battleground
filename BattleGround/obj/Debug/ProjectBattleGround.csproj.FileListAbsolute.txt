@@ -16,3 +16,9 @@ C:\Users\pavel\Desktop\New folder (2)\Battleground\BattleGround\obj\Debug\Projec
 C:\Users\pavel\Desktop\New folder (2)\Battleground\BattleGround\bin\Debug\ProjectBattleGround.exe
 C:\Users\pavel\Desktop\New folder (2)\Battleground\BattleGround\bin\Debug\ProjectBattleGround.pdb
 C:\Users\pavel\Desktop\New folder (2)\Battleground\BattleGround\obj\Debug\ProjectBattleGround.csprojResolveAssemblyReference.cache
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\bin\Debug\ProjectBattleGround.exe.config
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\obj\Debug\ProjectBattleGround.exe
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\obj\Debug\ProjectBattleGround.pdb
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\bin\Debug\ProjectBattleGround.exe
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\bin\Debug\ProjectBattleGround.pdb
+C:\Users\pavel\Desktop\testsfwqionfiqgb4\Battleground\BattleGround\obj\Debug\ProjectBattleGround.csprojResolveAssemblyReference.cache
