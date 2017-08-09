@@ -14,7 +14,7 @@ namespace ProjectBattleGround.Players
             this.PlayerArmy.UserArmy[0].CurrentPossition(0, 7); // Archer
             this.PlayerArmy.UserArmy[1].CurrentPossition(1, 7); //Healer
             this.PlayerArmy.UserArmy[2].CurrentPossition(1, 6); //Knight
-            this.PlayerArmy.UserArmy[3].CurrentPossition(2, 7);    //Magician
+            this.PlayerArmy.UserArmy[3].CurrentPossition(2, 7); //Magician
         }
     }
 }

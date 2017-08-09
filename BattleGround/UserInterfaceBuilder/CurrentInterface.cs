@@ -1,5 +1,7 @@
 ﻿using System;
-using ProjectBattleGround.UserFolder.UserContracts;
+using ProjectBattleGround.BattleField;
+using ProjectBattleGround.Players.Contracts;
+
 
 
 namespace ProjectBattleGround.UserInterfaceBuilder
@@ -68,9 +70,9 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
-        public static void GameStartScreen(IUser redPlayer,IUser bluePlayer)
+        public static void GameStartScreen(IPlayer redPlayer,IPlayer bluePlayer)
         {
-            string startScreen = String.Format(@"  _____________________                        	  ___1_______2_______3_______4_______5_______6_______7_______8___
+            string startScreen = String.Format(@"  ____________________                        	 ___1_______2_______3_______4_______5_______6_______7_______8___
  |     RED PLAYER     |                         |       |       |       |       |       |       |       |       |
  | Knight-{0}HP/{9}DMG |                        A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
  | Archer-{1}HP/{10}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
@@ -87,23 +89,23 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
 
     _____________________________________________________________________________________________________________",
-    redPlayer.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
     " ",
-    redPlayer.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
+    redPlayer.PlayerArmy.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
 );
             Console.Write(startScreen);
         }

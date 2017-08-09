@@ -2,6 +2,8 @@
 using ProjectBattleGround.UserFolder.UserContracts;
 using ProjectBattleGround.UserInterfaceBuilder;
 using System;
+using ProjectBattleGround.Players.Contracts;
+using ProjectBattleGround.Players;
 
 namespace ProjectBattleGround.Engine
 {
@@ -16,14 +18,11 @@ namespace ProjectBattleGround.Engine
             IUser redUser = CreatePlayer("RED PLAYER");
             Console.Clear();
             IUser blueUser = CreatePlayer("BLUE PLAYER");
+            IPlayer redPLayer = new RedPlayer(redUser);
+            IPlayer bluePlayer = new BluePlayer(blueUser);
             Console.Clear();
-            CurrentInterface.GameStartScreen(redUser, blueUser);
+            CurrentInterface.GameStartScreen(redPLayer, bluePlayer);
             Console.ReadLine();
-            redUser.UserArmy[2].TakeDamage(blueUser.UserArmy[2]);
-            Console.Clear();
-            CurrentInterface.GameStartScreen(redUser, blueUser);
-            Console.ReadLine();
-            
         }
 
         //creates the user that is selected by the player and returns it
