@@ -10,13 +10,13 @@ namespace ProjectBattleGround.Players
 {
     public abstract class Player : IPlayer
     {
-        private IUser playerArmy;
+        private IList<IBattleUnit> playerArmy;
 
         public Player(IUser playerArmy)
         {
-            this.PlayerArmy = playerArmy;
+            this.PlayerArmy = playerArmy.UserArmy;
         }
 
-        public IUser PlayerArmy { get; private set; }
+        public IList<IBattleUnit> PlayerArmy { get; private set; }
     }
 }

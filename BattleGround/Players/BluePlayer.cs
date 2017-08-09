@@ -11,10 +11,10 @@ namespace ProjectBattleGround.Players
     {
         public BluePlayer(IUser playerArmy) : base(playerArmy)
         {
-            this.PlayerArmy.UserArmy[0].CurrentPossition(0, 7); // Archer
-            this.PlayerArmy.UserArmy[1].CurrentPossition(1, 7); //Healer
-            this.PlayerArmy.UserArmy[2].CurrentPossition(1, 6); //Knight
-            this.PlayerArmy.UserArmy[3].CurrentPossition(2, 7); //Magician
+            this.PlayerArmy[0].CurrentPossition(0, 7); // Archer
+            this.PlayerArmy[1].CurrentPossition(1, 7); //Healer
+            this.PlayerArmy[2].CurrentPossition(1, 6); //Knight
+            this.PlayerArmy[3].CurrentPossition(2, 7); //Magician
         }
     }
 }

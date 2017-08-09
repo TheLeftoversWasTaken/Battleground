@@ -9,6 +9,6 @@ namespace ProjectBattleGround.Players.Contracts
 {
     public interface IPlayer
     {
-         IUser PlayerArmy { get;}
+         IList<IBattleUnit> PlayerArmy { get;}
     }
 }

@@ -92,23 +92,23 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
 
     _____________________________________________________________________________________________________________",
-    redPlayer.PlayerArmy.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.PlayerArmy.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.PlayerArmy.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
-    redPlayer.PlayerArmy.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy.UserArmy[2].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy.UserArmy[0].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy.UserArmy[1].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy.UserArmy[3].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy[2].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy[0].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy[1].ReturnHealthInANumberOfSpaces(3),
+    redPlayer.PlayerArmy[3].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[2].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[0].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[1].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[3].ReturnHealthInANumberOfSpaces(3),
     " ",
-    redPlayer.PlayerArmy.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.PlayerArmy.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.PlayerArmy.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
-    redPlayer.PlayerArmy.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.PlayerArmy.UserArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.PlayerArmy.UserArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.PlayerArmy.UserArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.PlayerArmy.UserArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
+    redPlayer.PlayerArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    redPlayer.PlayerArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
+    bluePlayer.PlayerArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
 );
             Console.Write(startScreen);
         }
