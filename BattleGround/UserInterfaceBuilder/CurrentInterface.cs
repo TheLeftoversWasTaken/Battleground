@@ -11,14 +11,16 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // writes a big a** game on the console.
         public static void GameNameGraphics()
         {
-            string buildGameNameGraphic = String.Format(@"         GGGGGGGGGGGGG                    AAAAAAAAA              MMMMMMMM           MMMMMMMM          EEEEEEEEEEEEEE
-       GGGGGGGGGGGGGGGGG                AAAAAAAAAAAAA            MMMMMMMMM         MMMMMMMMM          EEEEEEEEEEEEEE
-      GGGGG        GGGGG               AAAAA     AAAAA           MMMMMMMMMM       MMMMMMMMMM          EEEEE
-      GGGGG                           AAAAA       AAAAA          MMMMM  MMMM     MMMM  MMMMM          EEEEEEEEEEEEEE
-      GGGGG     GGGGGGG              AAAAAAAAAAAAAAAAAAA         MMMMM   MMMMMMMMMMM   MMMMM          EEEEEEEEEEEEEE
-      GGGGG         GGGG            AAAAAAAAAAAAAAAAAAAAA        MMMMM     MMMMMMM     MMMMM          EEEEE
-       GGGGGGGGGGGGGGGGG           AAAAA             AAAAA       MMMMM      MMMMM      MMMMM          EEEEEEEEEEEEEE
-         GGGGGGGGGGGGG            AAAAAA             AAAAAA      MMMMM       MMM       MMMMM          EEEEEEEEEEEEEE");
+            string buildGameNameGraphic = String.Format(@"
+       ██████╗  █████╗ ████████╗████████╗██╗     ███████╗     ██████╗ ██████╗  ██████╗ ██╗   ██╗███╗   ██╗██████╗ 
+       ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝    ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║████╗  ██║██╔══██╗
+       ██████╔╝███████║   ██║      ██║   ██║     █████╗      ██║  ███╗██████╔╝██║   ██║██║   ██║██╔██╗ ██║██║  ██║
+       ██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝      ██║   ██║██╔══██╗██║   ██║██║   ██║██║╚██╗██║██║  ██║
+       ██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗    ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║ ╚████║██████╔╝
+       ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝ 
+                                                                                                           
+                                                                                                                                                                                    
+");
             Console.Write(buildGameNameGraphic);
         }
 
@@ -41,7 +43,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         // wrongChoice indicates if there has been a wrong choice from the user if used with true will put a wrong choice indicator on the screen
-        public static void ChooseARace(string player,bool wrongChoice=false)
+        public static void ChooseARace(string player, bool wrongChoice = false)
         {
             CurrentInterface.GameNameGraphics();
             string mistakeMesage;
@@ -61,6 +63,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
        1-ALIEN                          2-CAT                            3-DOGE                       4-GOBLIN
 
+   Healer: +15 Healing            Archer: +10 Damage              Knight: +25 Health            Magician: +20 Helath
                                                        {0}
 
                                                  {1} SELECT RACE:",
@@ -70,7 +73,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
-        public static void GameStartScreen(IPlayer redPlayer,IPlayer bluePlayer)
+        public static void GameStartScreen(IPlayer redPlayer, IPlayer bluePlayer)
         {
             string startScreen = String.Format(@"  ____________________                        	 ___1_______2_______3_______4_______5_______6_______7_______8___
  |     RED PLAYER     |                         |       |       |       |       |       |       |       |       |
