@@ -13,16 +13,17 @@ namespace ProjectBattleGround.Engine
             CurrentInterface.BuildStartScreen();
             Console.ReadLine();
             Console.Clear();
-            IUser redUser= CreatePlayer("RED PLAYER");
+            IUser redUser = CreatePlayer("RED PLAYER");
             Console.Clear();
             IUser blueUser = CreatePlayer("BLUE PLAYER");
             Console.Clear();
-            CurrentInterface.GameStartScreen(redUser,blueUser);
+            CurrentInterface.GameStartScreen(redUser, blueUser);
             Console.ReadLine();
             redUser.UserArmy[2].TakeDamage(blueUser.UserArmy[2]);
             Console.Clear();
             CurrentInterface.GameStartScreen(redUser, blueUser);
             Console.ReadLine();
+            
         }
 
         //creates the user that is selected by the player and returns it
@@ -38,11 +39,11 @@ namespace ProjectBattleGround.Engine
         {
             string userInput = Console.ReadLine();
             IUser createdUser;
-            while(userInput!="1" && userInput != "2" && userInput != "3" && userInput != "4")
+            while (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
             {
                 Console.Clear();
                 CurrentInterface.ChooseARace(playerName, true);
-                userInput=Console.ReadLine();
+                userInput = Console.ReadLine();
             }
             switch (userInput)
             {

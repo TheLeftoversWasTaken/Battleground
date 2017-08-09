@@ -53,6 +53,18 @@ namespace ProjectBattleGround
                 this.unitPossition = value;
             }
         }
+        
+        public char UnitChar
+        {
+            get
+            {
+                return this.unitChar;
+            }
+            private set
+            {
+                this.unitChar = value;
+            }
+        }
 
         //methods
 
