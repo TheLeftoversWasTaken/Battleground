@@ -15,6 +15,7 @@ namespace ProjectBattleGround.Players
         public Player(IUser playerArmy)
         {
             this.PlayerArmy = playerArmy.UserArmy;
+            Console.WriteLine("player");
         }
 
         public IList<IBattleUnit> PlayerArmy { get; private set; }

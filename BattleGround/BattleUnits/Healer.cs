@@ -1,10 +1,11 @@
-﻿namespace ProjectBattleGround
+﻿using System;
+
+namespace ProjectBattleGround
 {
     public class Healer : BattleUnit, IHealer
     {
         //fields
         private int healingPower;
-        private const char unitChar = 'H';
 
         //constructor with default values.
         public Healer(int health = 50, int damage = 5, int healingPower = 25) : base(health, damage)
@@ -23,6 +24,11 @@
             {
                 this.healingPower = value;
             }
-        }   
+        }
+
+        public override char ReturnBattleUnitLetter()
+        {
+            return 'H' ;
+        }
     }
 }

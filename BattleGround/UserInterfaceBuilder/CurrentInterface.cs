@@ -1,5 +1,5 @@
 ﻿using System;
-using ProjectBattleGround.BattleField;
+using ProjectBattleGround.BattleFieldGenerator;
 using ProjectBattleGround.Players.Contracts;
 
 
@@ -73,42 +73,79 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
-        public static void GameStartScreen(IPlayer redPlayer, IPlayer bluePlayer)
+        public static void GameStartScreen(IPlayer redPlayer, IPlayer bluePlayer,BattleField battlefield)
         {
             string startScreen = String.Format(@"  ____________________                        	 ___1_______2_______3_______4_______5_______6_______7_______8___
  |     RED PLAYER     |                         |       |       |       |       |       |       |       |       |
- | Knight-{0}HP/{9}DMG |                        A|   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |   {8}   |       |       |
- | Archer-{1}HP/{10}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
- | Healer-{2}HP/{11}DMG |                         |       |       |       |       |       |       |       |       |
- | Mage  -{3}HP/{12}DMG |                        B|       |       |       |       |       |       |       |       |
+ | Knight-{0}HP/{4}DMG |                        A|   {16}   |   {17}   |   {18}   |   {19}   |   {20}   |   {21}   |   {22}   |   {23}   |
+ | Archer-{1}HP/{5}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
+ | Healer-{2}HP/{6}DMG |                         |       |       |       |       |       |       |       |       |
+ | Mage  -{3}HP/{7}DMG |                        A|   {24}   |   {25}   |   {26}   |   {27}   |   {28}   |   {29}   |   {30}   |   {31}   |
  |--------------------|                         |_______|_______|_______|_______|_______|_______|_______|_______|
  |     BLUE PLAYER    |                         |       |       |       |       |       |       |       |       |
- | Knight-{4}HP/{13}DMG |                        C|       |       |       |       |       |       |       |       |
- | Archer-{5}HP/{14}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
- | Healer-{6}HP/{15}DMG |
- | Mage  -{7}HP/{16}DMG |
+ | Knight-{8}HP/{12}DMG |                        A|   {32}   |   {33}   |   {34}   |   {35}   |   {36}   |   {37}   |   {38}   |   {39}   |
+ | Archer-{9}HP/{13}DMG |                         |_______|_______|_______|_______|_______|_______|_______|_______|
+ | Healer-{10}HP/{14}DMG |
+ | Mage  -{11}HP/{15}DMG |
  |____________________|
 
 
 
     _____________________________________________________________________________________________________________",
+    //players army stats 
+
+    //health of red player army
     redPlayer.PlayerArmy[2].ReturnHealthInANumberOfSpaces(3),
     redPlayer.PlayerArmy[0].ReturnHealthInANumberOfSpaces(3),
     redPlayer.PlayerArmy[1].ReturnHealthInANumberOfSpaces(3),
     redPlayer.PlayerArmy[3].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy[2].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy[0].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy[1].ReturnHealthInANumberOfSpaces(3),
-    bluePlayer.PlayerArmy[3].ReturnHealthInANumberOfSpaces(3),
-    " ",
+
+    // dmg of red player army
     redPlayer.PlayerArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
     redPlayer.PlayerArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
     redPlayer.PlayerArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
     redPlayer.PlayerArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
+
+    //health of blue player army
+    bluePlayer.PlayerArmy[2].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[0].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[1].ReturnHealthInANumberOfSpaces(3),
+    bluePlayer.PlayerArmy[3].ReturnHealthInANumberOfSpaces(3),
+
+    // dmg of blue player army
     bluePlayer.PlayerArmy[2].ReturnDamagePointsInANumberOfSpaces(2),
     bluePlayer.PlayerArmy[0].ReturnDamagePointsInANumberOfSpaces(2),
     bluePlayer.PlayerArmy[1].ReturnDamagePointsInANumberOfSpaces(2),
-    bluePlayer.PlayerArmy[3].ReturnDamagePointsInANumberOfSpaces(2)
+    bluePlayer.PlayerArmy[3].ReturnDamagePointsInANumberOfSpaces(2),
+
+    //spots on the battleground
+    //first row
+    battlefield.ReturnUnitInPossition(0, 0),
+    battlefield.ReturnUnitInPossition(0, 1),
+    battlefield.ReturnUnitInPossition(0, 2),
+    battlefield.ReturnUnitInPossition(0, 3),
+    battlefield.ReturnUnitInPossition(0, 4),
+    battlefield.ReturnUnitInPossition(0, 5),
+    battlefield.ReturnUnitInPossition(0, 6),
+    battlefield.ReturnUnitInPossition(0, 7),
+    //second row
+    battlefield.ReturnUnitInPossition(1, 0),
+    battlefield.ReturnUnitInPossition(1, 1),
+    battlefield.ReturnUnitInPossition(1, 2),
+    battlefield.ReturnUnitInPossition(1, 3),
+    battlefield.ReturnUnitInPossition(1, 4),
+    battlefield.ReturnUnitInPossition(1, 5),
+    battlefield.ReturnUnitInPossition(1, 6),
+    battlefield.ReturnUnitInPossition(1, 7),
+    //third row
+    battlefield.ReturnUnitInPossition(2, 0),
+    battlefield.ReturnUnitInPossition(2, 1),
+    battlefield.ReturnUnitInPossition(2, 2),
+    battlefield.ReturnUnitInPossition(2, 3),
+    battlefield.ReturnUnitInPossition(2, 4),
+    battlefield.ReturnUnitInPossition(2, 5),
+    battlefield.ReturnUnitInPossition(2, 6),
+    battlefield.ReturnUnitInPossition(2, 7)
 );
             Console.Write(startScreen);
         }

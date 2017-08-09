@@ -14,6 +14,7 @@ namespace ProjectBattleGround
         static void Main(string[] args)
         {
             MainEngine.StartGame();
+            
         }
     }
 }

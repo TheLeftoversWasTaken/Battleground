@@ -60,10 +60,6 @@ namespace ProjectBattleGround
             {
                 return this.unitChar;
             }
-            private set
-            {
-                this.unitChar = value;
-            }
         }
 
         //methods
@@ -110,5 +106,7 @@ namespace ProjectBattleGround
             this.UnitPossition = new CurrentUnitPossition(verticalPossition, horizontalPossition);
         }
 
+        //
+        public abstract char ReturnBattleUnitLetter();
     }
 }

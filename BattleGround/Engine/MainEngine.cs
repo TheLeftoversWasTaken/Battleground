@@ -4,6 +4,7 @@ using ProjectBattleGround.UserInterfaceBuilder;
 using System;
 using ProjectBattleGround.Players.Contracts;
 using ProjectBattleGround.Players;
+using ProjectBattleGround.BattleFieldGenerator;
 
 namespace ProjectBattleGround.Engine
 {
@@ -20,8 +21,15 @@ namespace ProjectBattleGround.Engine
             IUser blueUser = CreatePlayer("BLUE PLAYER");
             IPlayer redPLayer = new RedPlayer(redUser);
             IPlayer bluePlayer = new BluePlayer(blueUser);
+            BattleField battleField = new BattleField(redPLayer, bluePlayer);
             Console.Clear();
-            CurrentInterface.GameStartScreen(redPLayer, bluePlayer);
+            CurrentInterface.GameStartScreen(redPLayer, bluePlayer, battleField);
+            Console.ReadLine();
+            redPLayer.PlayerArmy[2].CurrentPossition(1, 3);
+            bluePlayer.PlayerArmy[0].CurrentPossition(0, 5);
+            battleField = new BattleField(redPLayer, bluePlayer);
+            Console.Clear();
+            CurrentInterface.GameStartScreen(redPLayer, bluePlayer, battleField);
             Console.ReadLine();
         }
 
