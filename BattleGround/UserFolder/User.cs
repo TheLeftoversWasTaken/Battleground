@@ -14,6 +14,7 @@ namespace ProjectBattleGround.UserFolder
         public User()
         {
             this.UserArmy = new List<IBattleUnit>();
+            this.BuildUserArmy();
         }
 
         //properties

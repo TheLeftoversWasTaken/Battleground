@@ -29,6 +29,21 @@ namespace ProjectBattleGround.Engine
             redPLayer.PlayerArmy[2].CurrentPossition(1, 3);//moving
             bluePlayer.PlayerArmy[0].CurrentPossition(0, 5);//moving
             redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
+            redPLayer.PlayerArmy[2].TakeDamage(bluePlayer.PlayerArmy[0]);//red knight takes dmg from blue archer
             bluePlayer.PlayerArmy[3].Heal(bluePlayer.PlayerArmy[1] as Healer); // blue magician is healed by blue healer
             battleField = new BattleField(redPLayer, bluePlayer);
             Console.Clear();
@@ -60,19 +75,15 @@ namespace ProjectBattleGround.Engine
             {
                 case "1":
                     createdUser = new UserAlien();
-                    createdUser.BuildUserArmy();
                     break;
                 case "2":
                     createdUser = new UserCat();
-                    createdUser.BuildUserArmy();
                     break;
                 case "3":
                     createdUser = new UserDoge();
-                    createdUser.BuildUserArmy();
                     break;
                 case "4":
                     createdUser = new UserGoblin();
-                    createdUser.BuildUserArmy();
                     break;
                 default:
                     throw new Exception("Fatal Error!");
