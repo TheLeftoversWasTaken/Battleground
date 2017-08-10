@@ -61,6 +61,29 @@ namespace ProjectBattleGround.BattleFieldGenerator
             }
         }
 
+        public bool IsPossitionEmpty(int horizontal,int vertical, IPlayer redPlayer, IPlayer bluePlayer)
+        {
+           
+            for (int i = 0; i < 4; i++)
+            {
+                if (redPlayer.PlayerArmy[i].UnitPossition.VerticalPossition==vertical
+                  &&redPlayer.PlayerArmy[i].UnitPossition.HorizontalPossition==horizontal)
+                {
+                    return false;
+                }
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                if (bluePlayer.PlayerArmy[i].UnitPossition.VerticalPossition == vertical
+                  && bluePlayer.PlayerArmy[i].UnitPossition.HorizontalPossition == horizontal)
+                {
+                    return false;
+                }
+            }
+
+
+            return true;
+        }
         public char? ReturnUnitInPossition(int verticalPossition, int HorrizontalPossition)
         {
             return this.battleFieldArray[verticalPossition, HorrizontalPossition];
