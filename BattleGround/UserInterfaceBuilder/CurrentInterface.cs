@@ -150,6 +150,44 @@ namespace ProjectBattleGround.UserInterfaceBuilder
             Console.Write(startScreen);
         }
         
+        // makes the player select a unit
+        public static void SelectBattleUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, string playerName, string wrongChoice="")
+        {
+            CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield );
+            string buildSelectUnitScreen = String.Format(@"
 
+            1:Archer                   2:Healer                   3:knight                   4:Mage
+            
+                                       {0}  
+
+                                              {1} select unit:",
+            wrongChoice,
+            playerName);
+            Console.Write(buildSelectUnitScreen);
+        }
+
+        //makes a player select move attack or get healed
+        public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, bool wrongChoice = false)
+        {
+            CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield);
+            string mistakeMesage;
+            if (wrongChoice)
+            {
+                mistakeMesage = "WRONG INPUT";
+            }
+            else
+            {
+                mistakeMesage = "";
+            }
+            string buildSelectUnitScreen = String.Format(@"
+
+            1 - Attack                                  2 - Heal                                3 - Move 
+            
+                                       {0}  
+
+                                              Select a type of move unit:",
+                                              mistakeMesage);
+            Console.Write(buildSelectUnitScreen);
+        }
     }
 }
