@@ -21,49 +21,43 @@ namespace ProjectBattleGround.Engine
             IUser blueUser = CreatePlayer("BLUE PLAYER");
             IPlayer redPlayer = new RedPlayer(redUser);
             IPlayer bluePlayer = new BluePlayer(blueUser);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
+            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
             BattleField battleField = new BattleField(redPlayer, bluePlayer);
             Console.Clear();
-            CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Payer");
-            int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Payer",redPlayer);
+            CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Player");
+            int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Player",redPlayer);
             Console.WriteLine(selectedUnit);
 
-
-            Console.ReadLine();
         }
 
-        //selects a Unit
-        private static int ReturnSelectedUnit(IPlayer redPlayer,IPlayer bluePlayer,BattleField battleField, string userName,IPlayer selectedPlayer)
+        //selects a Unit and these methods take a lot of arguments cuz they use the gameStartScreen interface and it takes 3 arguments on its own
+        private static int ReturnSelectedUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, string userName, IPlayer selectedPlayer)
         {
             string userInput = Console.ReadLine();
             int selectedUnit;
-            int.TryParse(userInput,out selectedUnit);
-            while ((userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4") && selectedPlayer.PlayerArmy[selectedUnit].Health!=0)
+            int.TryParse(userInput, out selectedUnit);
+            while (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
             {
                 Console.Clear();
-                CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField,userName, "This is not a unit or the selected unit has no hp");
+                CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, userName, "This is not a Unit");
                 userInput = Console.ReadLine();
+                int.TryParse(userInput, out selectedUnit);
             }
-            return selectedUnit-1;
+            selectedUnit = selectedUnit - 1;
+            if (selectedPlayer.PlayerArmy[selectedUnit].Health==0)
+            {
+                Console.Clear();
+                CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, userName, "This Unit has no HP");
+                selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, userName, selectedPlayer);
+            }
+            return selectedUnit;
         }
         
-        //checks if an army is dead
-        private static bool CheckIfArmyIsDead(IPlayer player)
-        {
-            bool emtyArmy = true;
-            int deadUnits = 0;
-            foreach(IBattleUnit unit in player.PlayerArmy)
-            {
-                if (unit.Health == 0)
-                {
-                    deadUnits++;
-                }
-            }
-            if (deadUnits == player.PlayerArmy.Count)
-            {
-                emtyArmy = false;
-            }
-            return emtyArmy;
-        }
 
         // prints the battlefield 
         private static void PrintGameInterface(BattleField battleField, IPlayer redPlayer, IPlayer bluePlayer)

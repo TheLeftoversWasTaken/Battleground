@@ -68,6 +68,10 @@ namespace ProjectBattleGround
         public void TakeDamage(IBattleUnit damageDealer)
         {
             this.Health = this.Health - damageDealer.Damage;
+            if (this.Health < 0)
+            {
+                this.Health = 0;
+            }
         }
 
         //this unit takes dmg

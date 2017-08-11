@@ -158,7 +158,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
             1:Archer                   2:Healer                   3:knight                   4:Mage
             
-                                       {0}  
+                                               {0}  
 
                                               {1} select unit:",
             wrongChoice,
