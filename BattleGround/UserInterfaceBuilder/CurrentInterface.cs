@@ -28,7 +28,6 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         //creates the start screen using GameNameGraphics
         public static void BuildStartScreen()
         {
-            Console.Clear();
             CurrentInterface.GameNameGraphics();
             string buildStartScreen = String.Format(@"
 
@@ -47,7 +46,6 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // wrongChoice indicates if there has been a wrong choice from the user if used with true will put a wrong choice indicator on the screen
         public static void ChooseARace(string player, bool wrongChoice = false)
         {
-            Console.Clear();
             CurrentInterface.GameNameGraphics();
             string mistakeMesage;
             if (wrongChoice)
@@ -158,7 +156,6 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // makes the player select a unit
         public static void SelectBattleUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, string playerName, string wrongChoice="")
         {
-            Console.Clear();
             CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield );
             string buildSelectUnitScreen = String.Format(@"
 
@@ -175,7 +172,6 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         //makes a player select move attack or get healed
         public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, bool wrongChoice = false)
         {
-            Console.Clear();
             CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield);
             string mistakeMesage;
             if (wrongChoice)

@@ -20,10 +20,8 @@ namespace ProjectBattleGround.Engine
             BattleField battleField = new BattleField(redPlayer, bluePlayer);
             CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Player");
             int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Player",redPlayer);
-            Console.WriteLine(selectedUnit);
 
         }
-
         //selects a Unit and these methods take a lot of arguments cuz they use the gameStartScreen interface and it takes 3 arguments on its own
         private static int ReturnSelectedUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, string userName, IPlayer selectedPlayer)
         {
