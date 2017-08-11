@@ -27,11 +27,12 @@ namespace ProjectBattleGround.Engine
             redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
             redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
             redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            BattleField battleField = new BattleField(redPlayer, bluePlayer);
+            Console.WriteLine(redPlayer.ReturnArmySize());
+            /*BattleField battleField = new BattleField(redPlayer, bluePlayer);
             Console.Clear();
             CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Player");
             int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Player",redPlayer);
-            Console.WriteLine(selectedUnit);
+            Console.WriteLine(selectedUnit);*/
 
         }
 
@@ -58,7 +59,6 @@ namespace ProjectBattleGround.Engine
             return selectedUnit;
         }
         
-
         // prints the battlefield 
         private static void PrintGameInterface(BattleField battleField, IPlayer redPlayer, IPlayer bluePlayer)
         {
