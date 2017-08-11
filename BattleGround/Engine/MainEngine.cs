@@ -15,24 +15,12 @@ namespace ProjectBattleGround.Engine
         {
             CurrentInterface.BuildStartScreen();
             Console.ReadLine();
-            Console.Clear();
-            IUser redUser = CreatePlayer("RED PLAYER");
-            Console.Clear();
-            IUser blueUser = CreatePlayer("BLUE PLAYER");
-            IPlayer redPlayer = new RedPlayer(redUser);
-            IPlayer bluePlayer = new BluePlayer(blueUser);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            redPlayer.PlayerArmy[1].TakeDamage(bluePlayer.PlayerArmy[2]);
-            Console.WriteLine(redPlayer.ReturnArmySize());
-            /*BattleField battleField = new BattleField(redPlayer, bluePlayer);
-            Console.Clear();
+            IPlayer redPlayer = new RedPlayer(CreatePlayer("RED PLAYER"));
+            IPlayer bluePlayer = new BluePlayer(CreatePlayer("BLUE PLAYER"));
+            BattleField battleField = new BattleField(redPlayer, bluePlayer);
             CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Player");
             int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Player",redPlayer);
-            Console.WriteLine(selectedUnit);*/
+            Console.WriteLine(selectedUnit);
 
         }
 
@@ -44,7 +32,6 @@ namespace ProjectBattleGround.Engine
             int.TryParse(userInput, out selectedUnit);
             while (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
             {
-                Console.Clear();
                 CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, userName, "This is not a Unit");
                 userInput = Console.ReadLine();
                 int.TryParse(userInput, out selectedUnit);
@@ -52,7 +39,6 @@ namespace ProjectBattleGround.Engine
             selectedUnit = selectedUnit - 1;
             if (selectedPlayer.PlayerArmy[selectedUnit].Health==0)
             {
-                Console.Clear();
                 CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, userName, "This Unit has no HP");
                 selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, userName, selectedPlayer);
             }
@@ -63,7 +49,6 @@ namespace ProjectBattleGround.Engine
         private static void PrintGameInterface(BattleField battleField, IPlayer redPlayer, IPlayer bluePlayer)
         {
             battleField = new BattleField(redPlayer, bluePlayer);
-            Console.Clear();
             CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battleField);
             Console.ReadLine();
         }
@@ -83,7 +68,6 @@ namespace ProjectBattleGround.Engine
             IUser createdUser;
             while (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
             {
-                Console.Clear();
                 CurrentInterface.ChooseARace(playerName, true);
                 userInput = Console.ReadLine();
             }

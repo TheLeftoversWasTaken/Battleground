@@ -11,6 +11,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // writes a big a** game on the console.
         public static void GameNameGraphics()
         {
+            Console.Clear();
              string buildGameNameGraphic = String.Format(@"
          ██████╗  █████╗ ████████╗████████╗██╗     ███████╗ ██████╗ ██████╗  ██████╗ ██╗   ██╗███╗   ██╗██████╗ 
          ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝██╔════╝ ██╔══██╗██╔═══██╗██║   ██║████╗  ██║██╔══██╗
@@ -27,6 +28,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         //creates the start screen using GameNameGraphics
         public static void BuildStartScreen()
         {
+            Console.Clear();
             CurrentInterface.GameNameGraphics();
             string buildStartScreen = String.Format(@"
 
@@ -45,6 +47,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // wrongChoice indicates if there has been a wrong choice from the user if used with true will put a wrong choice indicator on the screen
         public static void ChooseARace(string player, bool wrongChoice = false)
         {
+            Console.Clear();
             CurrentInterface.GameNameGraphics();
             string mistakeMesage;
             if (wrongChoice)
@@ -64,6 +67,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
        1-ALIEN                          2-CAT                            3-DOGE                       4-GOBLIN
 
    Healer: +15 Healing            Archer: +10 Damage              Knight: +25 Health            Magician: +20 Helath
+
                                                        {0}
 
                                                  {1} SELECT RACE:",
@@ -75,6 +79,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // the uppe user interface with a battle board and a stats window (still has a long way to go. remove this part of note whe done please)
         public static void GameStartScreen(IPlayer redPlayer, IPlayer bluePlayer,BattleField battlefield)
         {
+            Console.Clear();
             string startScreen = String.Format(@"  _______________________                      	 ___1_______2_______3_______4_______5_______6_______7_______8___
  |       RED PLAYER      |                      |       |       |       |       |       |       |       |       |
  | Knight-{0} HP /{4} DMG |                     A|   {16}   |   {17}   |   {18}   |   {19}   |   {20}   |   {21}   |   {22}   |   {23}   |
@@ -153,6 +158,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         // makes the player select a unit
         public static void SelectBattleUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, string playerName, string wrongChoice="")
         {
+            Console.Clear();
             CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield );
             string buildSelectUnitScreen = String.Format(@"
 
@@ -169,6 +175,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         //makes a player select move attack or get healed
         public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, bool wrongChoice = false)
         {
+            Console.Clear();
             CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield);
             string mistakeMesage;
             if (wrongChoice)
