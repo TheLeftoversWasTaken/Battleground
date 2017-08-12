@@ -11,7 +11,6 @@ namespace ProjectBattleGround
         int Health { get; }
         int Damage { get; }
         CurrentUnitPossition UnitPossition { get;}
-        char UnitChar { get;}
 
         char ReturnBattleUnitLetter();
     }

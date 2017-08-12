@@ -8,7 +8,6 @@ namespace ProjectBattleGround
         private int health;
         private int damage;
         private CurrentUnitPossition unitPossition;
-        private char unitChar;
 
         //constructor
         public BattleUnit(int health, int damage)
@@ -54,13 +53,6 @@ namespace ProjectBattleGround
             }
         }
         
-        public char UnitChar
-        {
-            get
-            {
-                return this.unitChar;
-            }
-        }
 
         //methods
 

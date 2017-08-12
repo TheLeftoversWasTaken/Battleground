@@ -5,6 +5,7 @@ using System;
 using ProjectBattleGround.Players.Contracts;
 using ProjectBattleGround.Players;
 using ProjectBattleGround.BattleFieldGenerator;
+using System.Collections.Generic;
 
 namespace ProjectBattleGround.Engine
 {
@@ -18,12 +19,106 @@ namespace ProjectBattleGround.Engine
             IPlayer redPlayer = new RedPlayer(CreatePlayer("RED PLAYER"));
             IPlayer bluePlayer = new BluePlayer(CreatePlayer("BLUE PLAYER"));
             BattleField battleField = new BattleField(redPlayer, bluePlayer);
-            CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, "Red Player");
-            int selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, "Red Player",redPlayer);
+            while(redPlayer.ReturnArmySize()>0 && bluePlayer.ReturnArmySize() > 0)
+            {
+                PlayerPlaysHisTurn(redPlayer, bluePlayer, battleField, redPlayer, bluePlayer, "Red Player");
+                battleField = new BattleField(redPlayer, bluePlayer);
+                if (bluePlayer.ReturnArmySize() == 0)
+                {
+                    //TODO MAKE A WIN SCREEN FOR RED
+                    CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battleField);
+                    Console.WriteLine("                                                                    RED WINS");
+                }
+                PlayerPlaysHisTurn(redPlayer, bluePlayer, battleField, bluePlayer, redPlayer, "Blue Player");
+                battleField = new BattleField(redPlayer, bluePlayer);
+                if (redPlayer.ReturnArmySize() == 0)
+                {
+                    //TODO MAKE A WIN SCREEN FOR BLUE
+                    CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battleField);
+                    Console.WriteLine("                                                                    BLUE WINS");
+                }
+            }
 
         }
+
+        // every player makes his move 
+        private static void PlayerPlaysHisTurn(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, IPlayer attackingPlayer, IPlayer defendingPlayer, string unitMessage)
+        {
+            CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, unitMessage);
+            int selecteAttackingdUnitIndex = ReturnSelectedUnitIndex(redPlayer, bluePlayer, battleField, unitMessage, attackingPlayer);
+            CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField);
+            string unitTypeOfMove = ReturnSelectedTypeOfMove(redPlayer, bluePlayer, battleField);
+            switch (unitTypeOfMove)
+            {
+                case "1":
+                    CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, unitMessage);
+                    int selectedUnitToBeAttackedIndex = ReturnSelectedUnitIndex(redPlayer, bluePlayer, battleField, unitMessage, defendingPlayer);
+                    while (defendingPlayer.PlayerArmy[selectedUnitToBeAttackedIndex].Health == 0)
+                    {
+                        selectedUnitToBeAttackedIndex = ReturnSelectedUnitIndex(redPlayer, bluePlayer, battleField, unitMessage, attackingPlayer);
+                    }
+                    defendingPlayer.PlayerArmy[selectedUnitToBeAttackedIndex].TakeDamage(attackingPlayer.PlayerArmy[selecteAttackingdUnitIndex]);
+                    break;
+                case "2":
+                    attackingPlayer.PlayerArmy[selecteAttackingdUnitIndex].Heal(attackingPlayer.PlayerArmy[1] as Healer);
+                    break;
+                case "3":
+                    CurrentInterface.SelectNewPositionForUnit(redPlayer, bluePlayer, battleField);
+                    string coordinates = ReturnNewSelectedPossition(redPlayer, bluePlayer, battleField, attackingPlayer.PlayerArmy[selecteAttackingdUnitIndex]);
+                    int rowPosition = (int)(Char.ToUpper(coordinates[0])) - 64 - 1;
+                    int colPosition = int.Parse(coordinates[1].ToString()) - 1;
+                    attackingPlayer.PlayerArmy[selecteAttackingdUnitIndex].CurrentPossition(rowPosition, colPosition);
+                    break;
+            }
+        }
+
+        //rturns a selected possition for units
+        private static string ReturnNewSelectedPossition(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, IBattleUnit selectedBattleUnit)
+        {
+            string userInput = Console.ReadLine();
+            while (userInput.Length != 2)
+            {
+                CurrentInterface.SelectNewPositionForUnit(redPlayer, bluePlayer, battleField, "You have selected an invalid possition");
+                userInput = Console.ReadLine();
+            }
+            int colPosition=0;
+            char rowPositionChar = Char.ToUpper(userInput[0]);
+            if (!(Char.IsLetter(rowPositionChar) && (int)rowPositionChar >64 && (int)rowPositionChar < 68) ||            // checks the ascII codes 
+                !(int.TryParse(userInput[1].ToString(), out colPosition) && (colPosition > 0 && colPosition < 9)))
+            {
+                CurrentInterface.SelectNewPositionForUnit(redPlayer, bluePlayer, battleField, "You have selected an invalid possition");
+                userInput =  ReturnNewSelectedPossition(redPlayer, bluePlayer, battleField, selectedBattleUnit);
+            }
+            int rowPosition = (int)rowPositionChar - 65;
+            colPosition--;
+            if(Math.Sqrt(Math.Pow(rowPosition-selectedBattleUnit.UnitPossition.VerticalPossition,2)) > 1 ||
+              Math.Sqrt(Math.Pow(colPosition - selectedBattleUnit.UnitPossition.HorizontalPossition, 2)) > 1)            //checks if the unit is moving 2 much
+            {
+                CurrentInterface.SelectNewPositionForUnit(redPlayer, bluePlayer, battleField, "You can only move one square per turn");
+                userInput= ReturnNewSelectedPossition(redPlayer, bluePlayer, battleField, selectedBattleUnit);
+            }
+            if(battleField.ReturnUnitInPossition(rowPosition,colPosition)!=' ')                  //checks if unit is moving to a filled square 
+            {
+                CurrentInterface.SelectNewPositionForUnit(redPlayer, bluePlayer, battleField, "There is a unit in that square.");
+                 userInput=ReturnNewSelectedPossition(redPlayer, bluePlayer, battleField, selectedBattleUnit);
+            }
+            return userInput;
+        }
+
+        //player selects a type of move and returns that type of move 
+        private static string ReturnSelectedTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField)
+        {
+            string userInput = Console.ReadLine();
+            while (userInput != "1" && userInput != "2" && userInput != "3")
+            {
+                CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField, true);
+                userInput = Console.ReadLine();
+            }
+            return userInput;
+        }
+
         //selects a Unit and these methods take a lot of arguments cuz they use the gameStartScreen interface and it takes 3 arguments on its own
-        private static int ReturnSelectedUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, string userName, IPlayer selectedPlayer)
+        private static int ReturnSelectedUnitIndex(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, string userName, IPlayer selectedPlayer)
         {
             string userInput = Console.ReadLine();
             int selectedUnit;
@@ -38,7 +133,7 @@ namespace ProjectBattleGround.Engine
             if (selectedPlayer.PlayerArmy[selectedUnit].Health==0)
             {
                 CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, userName, "This Unit has no HP");
-                selectedUnit = ReturnSelectedUnit(redPlayer, bluePlayer, battleField, userName, selectedPlayer);
+                selectedUnit = ReturnSelectedUnitIndex(redPlayer, bluePlayer, battleField, userName, selectedPlayer);
             }
             return selectedUnit;
         }

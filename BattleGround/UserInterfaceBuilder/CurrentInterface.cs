@@ -83,10 +83,10 @@ namespace ProjectBattleGround.UserInterfaceBuilder
  | Knight-{0} HP /{4} DMG |                     A|   {16}   |   {17}   |   {18}   |   {19}   |   {20}   |   {21}   |   {22}   |   {23}   |
  | Archer-{1} HP /{5} DMG |                      |_______|_______|_______|_______|_______|_______|_______|_______|
  | Healer-{2} HP /{6} DMG |                      |       |       |       |       |       |       |       |       |
- | Mage  -{3} HP /{7} DMG |                     A|   {24}   |   {25}   |   {26}   |   {27}   |   {28}   |   {29}   |   {30}   |   {31}   |
+ | Mage  -{3} HP /{7} DMG |                     B|   {24}   |   {25}   |   {26}   |   {27}   |   {28}   |   {29}   |   {30}   |   {31}   |
  |-----------------------|                      |_______|_______|_______|_______|_______|_______|_______|_______|
  |       BLUE PLAYER     |                      |       |       |       |       |       |       |       |       |
- | Knight-{8} HP /{12} DMG |                     A|   {32}   |   {33}   |   {34}   |   {35}   |   {36}   |   {37}   |   {38}   |   {39}   |
+ | Knight-{8} HP /{12} DMG |                     C|   {32}   |   {33}   |   {34}   |   {35}   |   {36}   |   {37}   |   {38}   |   {39}   |
  | Archer-{9} HP /{13} DMG |                      |_______|_______|_______|_______|_______|_______|_______|_______|
  | Healer-{10} HP /{14} DMG |
  | Mage  -{11} HP /{15} DMG |
@@ -161,7 +161,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
             1:Archer                   2:Healer                   3:knight                   4:Mage
             
-                                               {0}  
+                                                 {0}  
 
                                               {1} select unit:",
             wrongChoice,
@@ -170,9 +170,9 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         //makes a player select move attack or get healed
-        public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, bool wrongChoice = false)
+        public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, bool wrongChoice = false)
         {
-            CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battlefield);
+            CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battleField);
             string mistakeMesage;
             if (wrongChoice)
             {
@@ -186,10 +186,25 @@ namespace ProjectBattleGround.UserInterfaceBuilder
 
             1 - Attack                                  2 - Heal                                3 - Move 
             
-                                       {0}  
+                                                      {0}  
 
-                                              Select a type of move unit:",
+                                                  Select a type of move:",
                                               mistakeMesage);
+            Console.Write(buildSelectUnitScreen);
+        }
+
+        //selects where to go next
+        public static void SelectNewPositionForUnit(IPlayer redPlayer, IPlayer bluePlayer, BattleField battlefield, string wrongChoice = "")
+        {
+            CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battlefield);
+            string buildSelectUnitScreen = String.Format(@"
+            
+                                 Select new possition in the fromat - A4 , B6, C5
+
+                                        {0}  
+
+                                              Select possition:",
+            wrongChoice);
             Console.Write(buildSelectUnitScreen);
         }
     }
