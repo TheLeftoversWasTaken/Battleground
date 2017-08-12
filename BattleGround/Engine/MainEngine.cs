@@ -5,7 +5,6 @@ using System;
 using ProjectBattleGround.Players.Contracts;
 using ProjectBattleGround.Players;
 using ProjectBattleGround.BattleFieldGenerator;
-using System.Collections.Generic;
 
 namespace ProjectBattleGround.Engine
 {
@@ -28,6 +27,7 @@ namespace ProjectBattleGround.Engine
                     //TODO MAKE A WIN SCREEN FOR RED
                     CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battleField);
                     Console.WriteLine("                                                                    RED WINS");
+                    break;
                 }
                 PlayerPlaysHisTurn(redPlayer, bluePlayer, battleField, bluePlayer, redPlayer, "Blue Player");
                 battleField = new BattleField(redPlayer, bluePlayer);
@@ -36,6 +36,7 @@ namespace ProjectBattleGround.Engine
                     //TODO MAKE A WIN SCREEN FOR BLUE
                     CurrentInterface.GameStartScreen(redPlayer, bluePlayer, battleField);
                     Console.WriteLine("                                                                    BLUE WINS");
+                    break;
                 }
             }
 
