@@ -48,7 +48,7 @@ namespace ProjectBattleGround.Engine
             CurrentInterface.SelectBattleUnit(redPlayer, bluePlayer, battleField, unitMessage);
             int selecteAttackingdUnitIndex = ReturnSelectedUnitIndex(redPlayer, bluePlayer, battleField, unitMessage, attackingPlayer);
             CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField);
-            string unitTypeOfMove = ReturnSelectedTypeOfMove(redPlayer, bluePlayer, battleField);
+            string unitTypeOfMove = ReturnSelectedTypeOfMove(redPlayer, bluePlayer, battleField, attackingPlayer);
             switch (unitTypeOfMove)
             {
                 case "1":
@@ -107,13 +107,18 @@ namespace ProjectBattleGround.Engine
         }
 
         //player selects a type of move and returns that type of move 
-        private static string ReturnSelectedTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField)
+        private static string ReturnSelectedTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, IPlayer attackingUnit)
         {
             string userInput = Console.ReadLine();
             while (userInput != "1" && userInput != "2" && userInput != "3")
             {
-                CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField, true);
+                CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField, "Not a valid move.");
                 userInput = Console.ReadLine();
+            }
+            if(userInput=="2" && attackingUnit.PlayerArmy[1].Health == 0)
+            {
+                CurrentInterface.SelectTypeOfMove(redPlayer, bluePlayer, battleField, "This team has no healer for the units to heal.");
+                userInput = ReturnSelectedTypeOfMove(redPlayer, bluePlayer, battleField, attackingUnit);
             }
             return userInput;
         }

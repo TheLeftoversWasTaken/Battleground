@@ -170,18 +170,9 @@ namespace ProjectBattleGround.UserInterfaceBuilder
         }
 
         //makes a player select move attack or get healed
-        public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, bool wrongChoice = false)
+        public static void SelectTypeOfMove(IPlayer redPlayer, IPlayer bluePlayer, BattleField battleField, string wrongChoice=" ")
         {
             CurrentInterface.GameStartScreen (redPlayer,  bluePlayer, battleField);
-            string mistakeMesage;
-            if (wrongChoice)
-            {
-                mistakeMesage = "WRONG INPUT";
-            }
-            else
-            {
-                mistakeMesage = "";
-            }
             string buildSelectUnitScreen = String.Format(@"
 
             1 - Attack                                  2 - Heal                                3 - Move 
@@ -189,7 +180,7 @@ namespace ProjectBattleGround.UserInterfaceBuilder
                                                       {0}  
 
                                                   Select a type of move:",
-                                              mistakeMesage);
+                                              wrongChoice);
             Console.Write(buildSelectUnitScreen);
         }
 
